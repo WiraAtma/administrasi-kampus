@@ -16,11 +16,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              @if(auth()->check() && auth()->user()->name != '')
-              @else
+              @if(auth()->user()->name != '' || auth()->user()->role_id == 1)
                 <li class="nav-item">
-                  <a class="nav-link invisible {{ request()->is('/') ? 'active' : ''}}" href="/">Beranda</a>
+                  <a class="nav-link {{ request()->is('/') ? 'active' : ''}}" href="/">Beranda</a>
                 </li>
+              @else
               @endif
               @if(auth()->check() && auth()->user()->name != '')
                 <li class="nav-item">

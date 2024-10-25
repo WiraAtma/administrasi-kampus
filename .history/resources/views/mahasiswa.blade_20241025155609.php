@@ -35,9 +35,9 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($mahasiswaList as $data)
+            @foreach ($mahasiswaList as $data => mahasiswa)
                 <tr>
-                    <td>{{ $mahasiswaList->firstItem() + $loop->index }}</td>
+                    <td>{{ ($data->currentPage() - 1) * $data->perPage() + $data + 1 }}</td>
                     <td>{{ $data->nim }}</td>
                     <td>{{ $data->name }}</td>
                     <td>{{ $data->prodi->name }}</td>

@@ -15,14 +15,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              @if(auth()->check() && auth()->user()->name != '')
-              @else
                 <li class="nav-item">
-                  <a class="nav-link invisible {{ request()->is('/') ? 'active' : ''}}" href="/">Beranda</a>
+                  <a class="nav-link {{ request()->is('/') ? 'active' : ''}}" href="/">Beranda</a>
                 </li>
-              @endif
-              @if(auth()->check() && auth()->user()->name != '')
+            
                 <li class="nav-item">
                   <a class="nav-link {{ request()->is('mahasiswa') ? 'active' : ''}}" href="/mahasiswa">Mahasiswa</a>
                 </li>
@@ -32,9 +30,9 @@
                 <li class="nav-item">
                   <a class="nav-link {{ request()->is('fakultas') ? 'active' : ''}}" href="/fakultas">Fakultas Kampus</a>
                 </li>
-              @else
-              @endif
               </ul>
+            @else
+            @endif
             <ul class="navbar-nav">
               <li class="nav-item">
                 @if(auth()->check() && auth()->user()->name != '')

@@ -37,7 +37,7 @@
         <tbody>
             @foreach ($mahasiswaList as $data)
                 <tr>
-                    <td>{{ $mahasiswaList->firstItem() + $loop->index }}</td>
+                    <td>{{ $data->firstItem() + $loop->index }}</td>
                     <td>{{ $data->nim }}</td>
                     <td>{{ $data->name }}</td>
                     <td>{{ $data->prodi->name }}</td>

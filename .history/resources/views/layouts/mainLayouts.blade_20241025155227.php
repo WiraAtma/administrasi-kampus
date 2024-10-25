@@ -19,7 +19,7 @@
               @if(auth()->check() && auth()->user()->name != '')
               @else
                 <li class="nav-item">
-                  <a class="nav-link invisible {{ request()->is('/') ? 'active' : ''}}" href="/">Beranda</a>
+                  <a class="nav-link {{ request()->is('/') ? 'active' : ''}}" href="/">Beranda</a>
                 </li>
               @endif
               @if(auth()->check() && auth()->user()->name != '')

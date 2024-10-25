@@ -18,8 +18,8 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               @if(auth()->check() && auth()->user()->name != '')
               @else
-                <li class="nav-item">
-                  <a class="nav-link invisible {{ request()->is('/') ? 'active' : ''}}" href="/">Beranda</a>
+                <li class="nav-item disabled:">
+                  <a class="nav-link {{ request()->is('/') ? 'active' : ''}}" href="/">Beranda</a>
                 </li>
               @endif
               @if(auth()->check() && auth()->user()->name != '')
