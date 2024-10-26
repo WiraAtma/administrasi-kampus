@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Data Detail Mahasiswa</h1>
-    <div class="my-3">
+    <div class="my-5">
         @if ($mahasiswa->image != '')
             <img src="{{ asset('storage/photo/'. $mahasiswa->image) }}" alt="image" style="width:200px">
         @else
@@ -28,26 +28,24 @@
             </tr>
             <tr>
                 <th>Fakultas</th>
-                <td>{{ $mahasiswa->prodi->fakultas->name }}</td>
-            </tr>
-            <tr>
-                <th>Gender</th>
-                <td>
-                    @if ($mahasiswa->gender === 'L')
-                        Laki - Laki
-                    @else
-                        Perempuan
-                    @endif 
-                </td>
-            </tr>
-            <tr>
-                <th>Telepon (Aktif)</th>
-                <td>{{ $mahasiswa->phone }}</td>
-            </tr>
-            <tr>
-                <th>Alamat Email</th>
-                <td>{{ $mahasiswa->email }}</td>
             </tr>
         </table>
+        {{-- <p>NIM : </p>
+        <p>Nama : </p>
+        <p>Prodi : </p>
+        <p>Fakultas :
+            {{ $mahasiswa->prodi->fakultas->name }}
+        </p> --}}
+        <p>
+            Gender :
+            @if ($mahasiswa->gender === 'L')
+                Laki - Laki
+            @else
+                Perempuan
+            @endif 
+        </p>
+        <p>Telepon : {{ $mahasiswa->phone }}</p>
+        <p>Email : {{ $mahasiswa->email }}</p>
     </div>
+    <a href="/mahasiswa">Kembali Ke Halaman Mahasiswa</a>
 @endsection
